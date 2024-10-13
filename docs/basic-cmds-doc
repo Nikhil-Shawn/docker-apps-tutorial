@@ -1,139 +1,29 @@
-Sure! Here’s a concise document with basic commands for using Docker, along with some general command line navigation commands. You can save this as a Markdown file or any text document.
+# Basic Docker Commands
 
----
+# Docker Installation
+docker --version                     # Check Docker version
+docker-compose --version             # Check Docker Compose version
 
-# Docker Basic Commands and Terminal Navigation
+# Docker Commands
+docker pull <image_name>             # Pull an image from Docker Hub
+docker images                         # List all downloaded images
+docker rmi <image_name>               # Remove an image
+docker build -t <image_name> .       # Build an image from a Dockerfile in the current directory
+docker run <options> <image_name>    # Run a container from an image
+docker ps                             # List running containers
+docker ps -a                          # List all containers
+docker stop <container_id>            # Stop a running container
+docker rm <container_id>              # Remove a stopped container
+docker exec -it <container_id> <command> # Execute a command inside a running container
 
-## Docker Basic Commands
+# Docker Compose Commands
+docker-compose up                     # Start services defined in docker-compose.yml
+docker-compose down                   # Stop services and remove containers
+docker-compose build                  # Build or rebuild services
+docker-compose logs                   # View logs from services
 
-### 1. **Docker Installation**
-   - Ensure you have Docker installed on your system. Use the following command to check the installation:
-     ```bash
-     docker --version
-     ```
-
-### 2. **Docker Commands**
-
-#### **Images**
-- **List Docker Images**:
-  ```bash
-  docker images
-  ```
-- **Pull an Image**:
-  ```bash
-  docker pull <image-name>
-  ```
-- **Remove an Image**:
-  ```bash
-  docker rmi <image-name>
-  ```
-
-#### **Containers**
-- **Run a Container**:
-  ```bash
-  docker run <options> <image-name>
-  ```
-  Example: To run an Nginx container:
-  ```bash
-  docker run --name my-nginx -d -p 80:80 nginx
-  ```
-
-- **List Running Containers**:
-  ```bash
-  docker ps
-  ```
-
-- **List All Containers (including stopped ones)**:
-  ```bash
-  docker ps -a
-  ```
-
-- **Stop a Running Container**:
-  ```bash
-  docker stop <container-id>
-  ```
-
-- **Remove a Container**:
-  ```bash
-  docker rm <container-id>
-  ```
-
-#### **Dockerfile**
-- **Build an Image from a Dockerfile**:
-  ```bash
-  docker build -t <image-name> .
-  ```
-
-#### **Networking**
-- **List Docker Networks**:
-  ```bash
-  docker network ls
-  ```
-
-- **Create a Network**:
-  ```bash
-  docker network create <network-name>
-  ```
-
-### 3. **Docker Compose Commands**
-
-#### **Using Docker Compose**
-- **Start Services**:
-  ```bash
-  docker-compose up
-  ```
-  
-- **Start Services in Detached Mode**:
-  ```bash
-  docker-compose up -d
-  ```
-
-- **Stop Services**:
-  ```bash
-  docker-compose down
-  ```
-
-## Terminal Navigation Commands
-
-### **Windows Command Prompt / PowerShell Commands**
-
-- **Change Directory**:
-  ```bash
-  cd path\to\directory
-  ```
-  
-- **List Files and Directories**:
-  ```bash
-  dir
-  ```
-
-- **Go to Parent Directory**:
-  ```bash
-  cd ..
-  ```
-
-- **Change to Another Drive**:
-  ```bash
-  D:
-  ```
-
-### **Linux/Mac Terminal Commands**
-
-- **Change Directory**:
-  ```bash
-  cd /path/to/directory
-  ```
-  
-- **List Files and Directories**:
-  ```bash
-  ls
-  ```
-
-- **Go to Parent Directory**:
-  ```bash
-  cd ..
-  ```
-
-## Conclusion
-
-This document provides a basic overview of Docker commands and terminal navigation commands. For more detailed commands and options, you can refer to the [official Docker documentation](https://docs.docker.com/) and the help option for each command (e.g., `docker run --help`).
+# Terminal Navigation Commands
+cd D:\                                # Change directory to D drive
+cd ..                                 # Move up one directory
+dir                                   # List files in the current directory (Windows)
+ls                                    # List files in the current directory (Linux/Mac)
