@@ -1,16 +1,16 @@
 services:
   websites:
     build: 
-      context: .
+      context: .  # Build the web service from the current directory
     ports:
       - "80:80"
   unit-tests:
     volumes:
-      - "${PWD}/app:/app"
+      - "$PWD:/app"  # This mounts the spec directory to /spec in the container
     build:
-      context: .
+      context: .  # Build context for the unit-tests service
       dockerfile: rspec.dockerfile        
-    command:
+    command: 
+      - rspec
       - --pattern
-      - /app/spec/unit/*_spec.rb
-
+      - "/spec/unit/*_spec.rb"  # Updated to point to the correct path for your test files
